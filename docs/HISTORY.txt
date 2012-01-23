@@ -15,3 +15,9 @@ Changelog
 -----
 
 - missing HISTORY update (experimenting w/ jarn.mkrelease)
+
+1.0b4
+-----
+
+- fix profile name
+- add .gitignore
