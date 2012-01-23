@@ -1,0 +1,43 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+   xmlns:five="http://namespaces.zope.org/five"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:zcml="http://namespaces.zope.org/zcml"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="collective.readunread">
+
+    <five:registerPackage package="." initialize=".initialize" />
+
+    <i18n:registerTranslations directory="locales" />
+
+    <genericsetup:registerProfile
+      name="default"
+      title="ITCILO Conferences Read/Unread"
+      directory="profiles/default"
+      description="Installs the collective.readunread package"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+    <!-- add readby field -->
+    <include package="archetypes.schemaextender" />
+    <adapter factory=".extender.ReadByExtender" />
+
+    <!-- readby catalog indexes -->
+    <include package="plone.indexer" />
+    <adapter name="readBy" factory=".catalog.readBy" />
+
+    <!-- readby manager -->
+    <adapter factory=".adapters.Manager" />
+
+    <!-- subscribers -->
+    <subscriber
+        for="collective.readunread.interfaces.IReadByProvider
+             Products.Archetypes.interfaces.IObjectInitializedEvent"
+        handler=".subscribers.objectCreated" />
+
+    <subscriber
+        for="collective.readunread.interfaces.IReadByProvider
+             plone.validatehook.interfaces.IPostValidationEvent"
+        handler=".subscribers.objectViewed" />
+
+</configure>

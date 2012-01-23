@@ -1,0 +1,53 @@
+======================
+An integration doctest
+======================
+
+    >>> from Products.Five.testbrowser import Browser
+    >>> browser = Browser()
+    >>> purl = self.portal.absolute_url()
+    >>> browser.open(purl)
+    >>> self.setRoles(('Manager',))
+
+Let's create a board as Manager
+
+    >>> self.portal.invokeFactory('Ploneboard', 'theboard')
+    'theboard'
+
+    >>> board = self.portal['theboard']
+    >>> forum = board.addForum('theforum','Title','Description')
+    >>> conversation = forum.addConversation('about bla bla','bla bla bla')
+    >>> comment = conversation.addComment('comment','comment body')
+    >>> comment.Creator()
+    'test_user_1_'
+
+    >>> from itcilo.conferences.readunread.myutils import get_readby
+    >>> len(get_readby(comment))
+    1
+    >>> get_readby(comment)[0]
+    'test_user_1_'
+
+Let's read the comment as a third user
+
+    >>> from Products.CMFCore.utils import getToolByName
+    >>> membership = getToolByName(self.portal, 'portal_membership')
+    >>> membership.addMember("user1", "secret", ["Member"], [])
+
+    >>> self.logout()
+
+    >>> browser.getLink('Log in').click()
+    >>> browser.getControl('Login Name').value = 'user1'
+    >>> browser.getControl('Password').value = 'secret'
+    >>> browser.getControl('Log in').click()
+    >>> "logged in" in browser.contents
+    True
+
+    >>> browser.open(conversation.absolute_url())
+    >>> browser.contents
+    '...comment body...'
+    >>> from plone.validatehook.event import PostValidationEvent
+    >>> import zope.event
+    >>> from zope.publisher.browser import TestRequest
+    >>> request = TestRequest()
+    >>> zope.event.notify(PostValidationEvent(comment,request,"user1"))
+    >>> get_readby(comment)
+    'user1'

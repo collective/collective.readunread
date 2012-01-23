@@ -1,0 +1,9 @@
+.readunread_actions{
+    clear:both;
+    float:right;
+    margin-top:2px;
+    margin-bottom:10px;
+}
+.readunread_button{ width:120px; font-weight:bold; }
+.readunread_button.mark_as_read{ color:green }
+.readunread_button.mark_as_unread{ color:red }

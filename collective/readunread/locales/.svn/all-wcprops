@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/repos/plone/!svn/ver/2614/src/conferences/itcilo.conferences.readunread/itcilo/conferences/readunread/locales
+END
+rebuild.sh
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/repos/plone/!svn/ver/2614/src/conferences/itcilo.conferences.readunread/itcilo/conferences/readunread/locales/rebuild.sh
+END
+itcilo.conferences.readunread.pot
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/repos/plone/!svn/ver/2614/src/conferences/itcilo.conferences.readunread/itcilo/conferences/readunread/locales/itcilo.conferences.readunread.pot
+END

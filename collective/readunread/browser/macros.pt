@@ -1,0 +1,29 @@
+<metal:main define-macro="main" i18n:domain="collective.readunread">
+    <tal:readunread define="helpers context/@@readunread_helpers;
+                            is_markable python:helpers.is_markable(obj=obj);">
+        <tal:markable condition="is_markable">
+            <div class="readunread_actions">
+                <form style="display:inline"
+                      tal:define="status python:helpers.get_status(obj)"
+                      tal:attributes="action string:${context/absolute_url}/readunread_helpers">
+                  <input type="hidden" name="path"
+                         tal:attributes="value python:'/'.join(obj.getPhysicalPath())"/>
+                  <input type="hidden" name="mark_as"
+                         tal:attributes="value python:status=='read' and 'unread' or 'read'"/>
+                  <input class="standalone readunread_button mark_as_read"
+                         type="button"
+                         value="Mark as read"
+                         i18n:attributes="value"
+                         tal:attributes="style python:status=='read' and 'display:none' or 'display:block'"
+                         />
+                  <input class="standalone readunread_button mark_as_unread"
+                         type="button"
+                         value="Mark as unread"
+                         i18n:attributes="value"
+                         tal:attributes="style python:status=='unread' and 'display:none' or 'display:block'"
+                         />
+                </form>
+            </div>
+        </tal:markable>
+    </tal:readunread>
+</metal:main>

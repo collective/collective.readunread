@@ -1,0 +1,33 @@
+<configure
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="collective.readunread">
+
+    <browser:page
+        for="*"
+        name="readunread_helpers"
+        class=".views.Helpers"
+        permission="zope2.Public"
+        allowed_attributes="is_markable get_status mark_as"
+        />
+        
+    <browser:page
+        for="*"
+        name="mark_as"
+        class=".views.Helpers"
+        permission="zope2.Public"
+        attribute="mark_as"
+        />
+
+    <browser:page
+        for="*"
+        name="readunread_macros"
+        permission="zope2.Public"
+        template="macros.pt"
+        />
+
+    <browser:resource
+        name="readunread.js"
+        file="readunread.js"
+        />
+
+</configure>
