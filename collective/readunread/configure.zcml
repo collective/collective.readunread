@@ -12,7 +12,7 @@
 
     <genericsetup:registerProfile
       name="default"
-      title="ITCILO Conferences Read/Unread"
+      title="Collective Read/Unread"
       directory="profiles/default"
       description="Installs the collective.readunread package"
       provides="Products.GenericSetup.interfaces.EXTENSION"
