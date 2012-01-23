@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.0b1'
+version = '1.0b2'
 
 setup(name='collective.readunread',
       version=version,
@@ -14,10 +14,10 @@ setup(name='collective.readunread',
         "Framework :: Plone",
         "Programming Language :: Python",
         ],
-      keywords='',
-      author='',
-      author_email='',
-      url='http://svn.plone.org/svn/collective/',
+      keywords='Plone',
+      author='Simone Orsi',
+      author_email='simahawk@gmail.com',
+      url='https://github.com/collective/collective.readunread',
       license='GPL',
       packages=find_packages(exclude=['ez_setup']),
       namespace_packages=['collective'],
