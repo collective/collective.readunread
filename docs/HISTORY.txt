@@ -1,23 +1,35 @@
 Changelog
 =========
 
-1.0b1dev (unreleased)
----------------------
-
-- Initial release
-
-1.0b2
+1.0b5
 -----
 
-- updated docs
+- update docs
+- added doctest for manager
+- fixed adapter
+- improved utils
 
-1.0b3
------
-
-- missing HISTORY update (experimenting w/ jarn.mkrelease)
 
 1.0b4
 -----
 
 - fix profile name
 - add .gitignore
+
+
+1.0b3
+-----
+
+- missing HISTORY update (experimenting w/ jarn.mkrelease)
+
+
+1.0b2
+-----
+
+- updated docs
+
+
+1.0b1dev (unreleased)
+---------------------
+
+- Initial release
