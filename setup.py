@@ -1,13 +1,20 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.0b4'
+version = '1.0b5'
+
+def get_long_desc():
+    contents = [
+        open(os.path.join("collective","readunread","README.rst").read(),
+        open(os.path.join("docs", "HISTORY.txt")).read(),
+        open(os.path.join("docs", "CREDITS.txt")).read(),
+    ]
+    return "\n".join(contents)
 
 setup(name='collective.readunread',
       version=version,
       description="",
-      long_description=open("README.rst").read() + "\n" +
-                       open(os.path.join("docs", "HISTORY.txt")).read(),
+      long_description=get_long_desc(),
       # Get more strings from
       # http://pypi.python.org/pypi?:action=list_classifiers
       classifiers=[
