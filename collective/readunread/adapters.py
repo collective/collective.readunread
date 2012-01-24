@@ -5,6 +5,7 @@ from collective.readunread.interfaces import IReadByProvider
 from collective.readunread.interfaces import IReadByManager
 from collective.readunread.myutils import set_readby
 from collective.readunread.myutils import set_unreadby
+from collective.readunread.myutils import get_readby
 from collective.readunread.myutils import get_status
 
 
@@ -29,9 +30,10 @@ class Manager(object):
             self.set_readby(userids)
         elif status == 'unread':
             self.set_unreadby(userids)
+        return status
 
     def get_readby(self):
-        get_readby(self.context)
+        return get_readby(self.context)
 
     def get_status(self,userid):
         return get_status(self.context,userid)
