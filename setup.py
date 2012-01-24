@@ -5,7 +5,7 @@ version = '1.0b5'
 
 def get_long_desc():
     contents = [
-        open(os.path.join("collective","readunread","README.rst").read(),
+        open(os.path.join("collective","readunread","README.rst")).read(),
         open(os.path.join("docs", "HISTORY.txt")).read(),
         open(os.path.join("docs", "CREDITS.txt")).read(),
     ]
