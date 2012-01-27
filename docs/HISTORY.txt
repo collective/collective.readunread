@@ -1,6 +1,10 @@
 Changelog
 =========
 
+1.0b6
+-----
+- fix missing import browser package
+
 1.0b5
 -----
 - update docs
