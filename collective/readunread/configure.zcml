@@ -17,6 +17,8 @@
       description="Installs the collective.readunread package"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
+   
+    <include package=".browser" />
 
     <!-- add readby field -->
     <include package="archetypes.schemaextender" />
