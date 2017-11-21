@@ -7,8 +7,8 @@ This package provides read/unread status for dexterity Plone objects.
 Features
 --------
 
-- Choose with a behavior which content type will be concerned (marking with IReadByMarker)
-- Provide a viewlet for objects providing IReadByMarker
+- Choose with a behavior which content type will be concerned (marking with IReadUnreadMarker)
+- Provide a viewlet for objects providing IReadUnreadMarker
 - Provide an optional zcml to automatically mark as read traversed objects
 
 

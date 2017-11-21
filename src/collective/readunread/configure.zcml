@@ -2,6 +2,7 @@
     xmlns="http://namespaces.zope.org/zope"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:plone="http://namespaces.plone.org/plone"
     i18n_domain="collective.readunread">
 
   <i18n:registerTranslations directory="locales" />
@@ -9,6 +10,12 @@
   <includeDependencies package="." />
 
   <include package=".browser" />
+
+  <plone:behavior
+      title="Read/Unread marker"
+      description="Activates read/unread functionality, defined by members."
+      provides=".behaviors.IReadUnreadMarker"
+      />
 
   <genericsetup:registerProfile
       name="default"
