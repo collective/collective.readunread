@@ -6,6 +6,8 @@
 dist
 build
 eggs
+include
+lib
 parts
 bin
 var
