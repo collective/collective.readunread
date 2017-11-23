@@ -9,7 +9,14 @@ Features
 
 - Choose with a behavior which content type will be concerned (marking with IReadUnreadMarker)
 - Propose a viewlet for objects providing IReadUnreadMarker
+
+
+To do
+--------
+
 - Propose an optional zcml to automatically mark as read traversed objects
+- Add a registry option with a portal types list to choose if modification event must be notified
+- Add a separate profile to choose to add read/unread index
 
 
 Translations

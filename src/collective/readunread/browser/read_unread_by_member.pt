@@ -1,24 +1,23 @@
-<div id="read_unread_by_member"
+<div id="read_unread_viewlet"
      tal:condition="view/available"
      i18n:domain="collective.readunread">
-
-    <div class="readunread_viewlet" tal:define="status python: view.get_status();">
-        <form style="display:inline" id="readunread_actions">
-          <span tal:content="status" id='readunread_status'/>
-          <input class="standalone readunread_action"
-                 id="mark_as_read"
-                 type="button"
-                 value="Mark as read"
-                 i18n:attributes="value"
-                 tal:attributes="style python:status=='read' and 'display:none' or 'display:inline'"
-                 />
-          <input class="standalone readunread_action"
-                 id="mark_as_unread"
-                 type="button"
-                 value="Mark as unread"
-                 i18n:attributes="value"
-                 tal:attributes="style python:status=='unread' and 'display:none' or 'display:inline'"
-                 />
-        </form>
-    </div>
+<tal:def define="status python: view.get_status();">
+    <form style="display:inline" id="readunread_actions">
+      <span tal:content="status" id='readunread_status'/>
+      <input class="standalone readunread_action"
+             id="mark_as_read"
+             type="button"
+             value="Mark as read"
+             i18n:attributes="value"
+             tal:attributes="style python:status=='read' and 'display:none' or 'display:inline'"
+             />
+      <input class="standalone readunread_action"
+             id="mark_as_unread"
+             type="button"
+             value="Mark as unread"
+             i18n:attributes="value"
+             tal:attributes="style python:status=='unread' and 'display:none' or 'display:inline'"
+             />
+    </form>
+</tal:def>
 </div>

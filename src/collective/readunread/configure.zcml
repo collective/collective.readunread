@@ -12,6 +12,8 @@
 
     <include package=".browser" />
 
+    <include package="plone.behavior" file="meta.zcml" />
+
     <plone:behavior
         title="Read/Unread marker"
         description="Activates read/unread functionality, defined by members."
@@ -33,7 +35,7 @@
         directory="profiles/plone5"
         description="Installs the collective.readunread add-on."
         provides="Products.GenericSetup.interfaces.EXTENSION"
-      post_handler=".setuphandlers.post_install"
+        post_handler=".setuphandlers.post_install"
         />
 
     <genericsetup:registerProfile
@@ -43,7 +45,7 @@
         directory="profiles/plone4"
         description="Installs the collective.readunread add-on."
         provides="Products.GenericSetup.interfaces.EXTENSION"
-      post_handler=".setuphandlers.post_install"
+        post_handler=".setuphandlers.post_install"
         />
 
     <genericsetup:registerProfile

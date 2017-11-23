@@ -7,6 +7,7 @@ dist
 build
 devel
 eggs
+htmlcov
 include
 lib
 parts
