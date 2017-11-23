@@ -8,8 +8,8 @@ Features
 --------
 
 - Choose with a behavior which content type will be concerned (marking with IReadUnreadMarker)
-- Provide a viewlet for objects providing IReadUnreadMarker
-- Provide an optional zcml to automatically mark as read traversed objects
+- Propose a viewlet for objects providing IReadUnreadMarker
+- Propose an optional zcml to automatically mark as read traversed objects
 
 
 Translations

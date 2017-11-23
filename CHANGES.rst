@@ -6,6 +6,8 @@ Changelog
 ------------------
 - package modification
   [sgeulette]
+- added viewlet, view, utils
+  [sgeulette]
 
 1.0b6
 -----

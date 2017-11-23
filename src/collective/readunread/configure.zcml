@@ -3,40 +3,60 @@
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     xmlns:i18n="http://namespaces.zope.org/i18n"
     xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns:zcml="http://namespaces.zope.org/zcml"
     i18n_domain="collective.readunread">
 
-  <i18n:registerTranslations directory="locales" />
+    <i18n:registerTranslations directory="locales" />
 
-  <includeDependencies package="." />
+    <includeDependencies package="." />
 
-  <include package=".browser" />
+    <include package=".browser" />
 
-  <plone:behavior
-      title="Read/Unread marker"
-      description="Activates read/unread functionality, defined by members."
-      provides=".behaviors.IReadUnreadMarker"
-      />
+    <plone:behavior
+        title="Read/Unread marker"
+        description="Activates read/unread functionality, defined by members."
+        provides=".behaviors.IReadUnreadMarker"
+        />
 
-  <genericsetup:registerProfile
-      name="default"
-      title="collective.readunread"
-      directory="profiles/default"
-      description="Installs the collective.readunread add-on."
-      provides="Products.GenericSetup.interfaces.EXTENSION"
+    <genericsetup:registerProfile
+        name="install-base"
+        title="collective.readunread"
+        directory="profiles/base"
+        description="Base profile for collective.readunread."
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+        />
+
+    <genericsetup:registerProfile
+        zcml:condition="have plone-5"
+        name="default"
+        title="collective.readunread"
+        directory="profiles/plone5"
+        description="Installs the collective.readunread add-on."
+        provides="Products.GenericSetup.interfaces.EXTENSION"
       post_handler=".setuphandlers.post_install"
-      />
+        />
 
-  <genericsetup:registerProfile
-      name="uninstall"
-      title="collective.readunread (uninstall)"
-      directory="profiles/uninstall"
-      description="Uninstalls the collective.readunread add-on."
-      provides="Products.GenericSetup.interfaces.EXTENSION"
-      post_handler=".setuphandlers.uninstall"
-      />
+    <genericsetup:registerProfile
+        zcml:condition="not-have plone-5"
+        name="default"
+        title="collective.readunread"
+        directory="profiles/plone4"
+        description="Installs the collective.readunread add-on."
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+      post_handler=".setuphandlers.post_install"
+        />
 
-  <utility
-      factory=".setuphandlers.HiddenProfiles"
-      name="collective.readunread-hiddenprofiles" />
+    <genericsetup:registerProfile
+        name="uninstall"
+        title="collective.readunread (uninstall)"
+        directory="profiles/uninstall"
+        description="Uninstalls the collective.readunread add-on."
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+        post_handler=".setuphandlers.uninstall"
+        />
+
+    <utility
+        factory=".setuphandlers.HiddenProfiles"
+        name="collective.readunread-hiddenprofiles" />
 
 </configure>

@@ -2,20 +2,37 @@
     xmlns="http://namespaces.zope.org/zope"
     xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns:zcml="http://namespaces.zope.org/zcml"
     i18n_domain="collective.readunread">
 
-  <!-- Set overrides folder for Just-a-Bunch-Of-Templates product -->
-  <include package="z3c.jbot" file="meta.zcml" />
-  <browser:jbot
-      directory="overrides"
-      layer="collective.readunread.interfaces.ICollectiveReadunreadLayer"
-      />
+    <browser:viewlet
+        for="collective.readunread.behaviors.IReadUnreadMarker"
+        name="read_unread_by_member"
+        manager="plone.app.layout.viewlets.interfaces.IBelowContentTitle"
+        class="collective.readunread.browser.viewlets.ReadUnreadViewlet"
+        template="read_unread_by_member.pt"
+        permission="zope2.View"
+        />
 
-  <!-- Publish static files -->
-  <plone:static
-      name="collective.readunread"
-      type="plone"
-      directory="static"
-      />
+    <browser:page
+        for="collective.readunread.behaviors.IReadUnreadMarker"
+        name="change_read_unread_status"
+        class=".views.ReadUnreadView"
+        permission="zope2.Public"
+        />
+
+    <!-- Publish static files -->
+    <plone:static
+        zcml:condition="have plone-5"
+        name="collective.readunread"
+        type="plone"
+        directory="static"
+        />
+
+    <browser:resourceDirectory
+        zcml:condition="not-have plone-5"
+        name="collective.readunread"
+        directory="static"
+        />
 
 </configure>
