@@ -2,7 +2,7 @@
      tal:condition="view/available"
      i18n:domain="collective.readunread">
 <tal:def define="status python: view.get_status();">
-    <form style="display:inline" id="readunread_actions">
+    <form style="display:inline" id="readunread_actions" tal:attributes="data-obj_url view/context/absolute_url;">
       <span tal:content="status" id='readunread_status'/>
       <input class="standalone readunread_action"
              id="mark_as_read"

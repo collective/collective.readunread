@@ -5,7 +5,7 @@ $(document).ready(function(){
         var $container = $(this).closest('#readunread_actions');
         $.ajax({
             type: "POST",
-            url: "change_read_unread_status?action=" + $(this).attr('id'),
+            url: $container.data('obj_url') + "/change_read_unread_status?action=" + $(this).attr('id'),
             data: $container.serialize(),
             dataType: "json",
             success: function(result){
