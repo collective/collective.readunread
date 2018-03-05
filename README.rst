@@ -1,3 +1,9 @@
+.. image:: https://travis-ci.org/collective/collective.readunread.svg?branch=master
+   :target: https://travis-ci.org/collective/collective.readunread
+
+.. image:: https://coveralls.io/repos/collective/collective.readunread/badge.png?branch=master
+   :target: https://coveralls.io/r/collective/collective.readunread?branch=master
+
 =====================
 collective.readunread
 =====================
