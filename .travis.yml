@@ -9,6 +9,11 @@ cache:
     - buildout-cache/downloads
     - buildout-cache/eggs
 
+env:
+  - PLONE_VERSION=4.3
+  - PLONE_VERSION=5.0
+  - PLONE_VERSION=5.1
+
 before_install:
   - mkdir -p buildout-cache/{eggs,downloads}
 
@@ -16,6 +21,8 @@ install:
   - virtualenv .
   - bin/pip install --upgrade pip
   - bin/pip install -r requirements.txt
+  - sed -ie "s#plone-4.3#plone-$PLONE_VERSION#" buildout.cfg
+  - sed -ie "s#travis-4.3#travis-$PLONE_VERSION#" travis.cfg
   - bin/buildout -Nc travis.cfg
 
 script:
