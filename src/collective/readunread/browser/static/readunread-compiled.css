@@ -1,3 +1,9 @@
 .readunread_viewlet {
  display: inline;
 }
+#mark_as_unread {
+ background-color: #61d63e;
+}
+#mark_as_read {
+ background-color: #e55465;
+}

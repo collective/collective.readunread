@@ -1,0 +1,8 @@
+
+#: ../browser/read_unread_by_member.pt
+msgid "Mark as read"
+msgstr ""
+
+#: ../browser/read_unread_by_member.pt
+msgid "Mark as unread"
+msgstr ""

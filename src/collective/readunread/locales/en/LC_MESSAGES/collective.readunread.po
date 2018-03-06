@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2017-11-21 15:02+0000\n"
+"POT-Creation-Date: 2018-03-06 10:05+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,26 +14,46 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: collective.readunread\n"
 
-#: ../configure.zcml:18
+#: ../configure.zcml:21
 msgid "Activates read/unread functionality, defined by members."
 msgstr ""
 
-#: ../configure.zcml:27
+#: ../configure.zcml:29
+msgid "Base profile for collective.readunread."
+msgstr ""
+
+#: ../configure.zcml:39
 msgid "Installs the collective.readunread add-on."
 msgstr ""
 
-#: ../configure.zcml:18
+#: ../browser/read_unread_by_member.pt:6
+msgid "Mark as read"
+msgstr ""
+
+#: ../browser/read_unread_by_member.pt:13
+msgid "Mark as unread"
+msgstr ""
+
+#: ../configure.zcml:21
 msgid "Read/Unread marker"
 msgstr "Read / Unread"
 
-#: ../configure.zcml:36
+#: ../testing.zcml:15
+msgid "Steps to ease tests of collective.readunread"
+msgstr ""
+
+#: ../configure.zcml:58
 msgid "Uninstalls the collective.readunread add-on."
 msgstr ""
 
-#: ../configure.zcml:27
+#: ../configure.zcml:29
 msgid "collective.readunread"
 msgstr ""
 
-#: ../configure.zcml:36
+#: ../configure.zcml:58
 msgid "collective.readunread (uninstall)"
+msgstr ""
+
+#: ../testing.zcml:15
+msgid "collective.readunread tests"
 msgstr ""
