@@ -20,3 +20,4 @@ $(document).ready(function(){
   return false;
  });
 });
+define("/srv/instances/PRODUCTS/collective.readunread/src/collective/readunread/browser/static/readunread.js", function(){});

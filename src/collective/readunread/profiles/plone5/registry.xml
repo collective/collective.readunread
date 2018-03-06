@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<registry>
+
+  <records prefix="plone.resources/readunread"
+           interface='Products.CMFPlone.interfaces.IResourceRegistry'>
+    <value key="js">++plone++collective.readunread/readunread.js</value>
+    <!--value key="deps">jquery</value-->
+    <value key="css">
+      <element>++plone++collective.readunread/readunread.css</element>
+    </value>
+  </records>
+
+  <records prefix="plone.bundles/readunread"
+           interface='Products.CMFPlone.interfaces.IBundleRegistry'>
+    <value key="resources" purge="false">
+      <element>readunread</element>
+    </value>
+    <value key="enabled">True</value>
+    <!--value key="compile">False</value-->
+    <!--value key="merge_with">logged-in</value-->
+    <value key="expression">python: member is not None</value>
+    <value key="depends">plone-logged-in</value>
+    <value key="jscompilation">++plone++collective.readunread/readunread-compiled.js</value>
+    <value key="csscompilation">++plone++collective.readunread/readunread-compiled.css</value>
+    <value key="last_compilation">2018-03-06 10:00:00</value>
+  </records>
+
+
+</registry>
