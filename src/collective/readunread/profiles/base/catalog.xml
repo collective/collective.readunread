@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<object name="portal_catalog" meta_type="Plone Catalog Tool">
+ <index name="read_by" meta_type="KeywordIndex">
+  <indexed_attr value="read_by"/>
+ </index>
+ <column value="read_by"/>
+</object>

@@ -57,6 +57,7 @@ setup(
             'plone.app.contenttypes',
             'plone.app.imaging',
             'plone.app.robotframework[debug]',
+            'Products.ZCatalog>3.0,<=3.0.3',
         ],
     },
     entry_points="""

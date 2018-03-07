@@ -37,4 +37,5 @@ def set_ru_status(obj, userid=None, status='read'):
         add_to_annotation(ANNOT_KEY, userid, obj=obj)
     elif status == 'unread':
         del_from_annotation(ANNOT_KEY, userid, obj=obj)
+    obj.reindexObject(idxs=['read_by'])
     return status

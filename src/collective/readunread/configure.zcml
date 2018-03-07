@@ -61,4 +61,6 @@
         factory=".setuphandlers.HiddenProfiles"
         name="collective.readunread-hiddenprofiles" />
 
+    <adapter name="read_by" factory=".adapters.read_by_index" />
+
 </configure>
